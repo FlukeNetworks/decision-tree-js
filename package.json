@@ -1,0 +1,24 @@
+{ 
+  "name": "decision-tree-js",
+  "version": "0.0.1",
+  "description": "Javascript Implementation of ID3 Decision Tree",
+  "author": "Yurii Lahodiuk"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FlukeNetworks/decision-tree-js.git"
+  },
+  "scripts": { },
+  "dependencies": { },
+  "devDependencies": {
+    "mocha":"*",
+    "should":"2.1.1",
+    "istanbul": "*",
+    "jshint": "2.3.0",
+    "complexity-report": "1.0.2",
+    "plato": "0.6.2"
+  },
+  "main": "./decision-tree.js",
+  "engines": {
+    "node": "*"
+  }
+}

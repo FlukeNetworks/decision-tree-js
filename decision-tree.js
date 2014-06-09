@@ -392,3 +392,5 @@ var dt = (function () {
     exports.RandomForest = RandomForest;
     return exports;
 })();
+
+module.exports = dt;
