@@ -2,7 +2,7 @@
   "name": "decision-tree-js",
   "version": "0.0.1",
   "description": "Javascript Implementation of ID3 Decision Tree",
-  "author": "Yurii Lahodiuk"
+  "author": "Yurii Lahodiuk",
   "repository": {
     "type": "git",
     "url": "https://github.com/FlukeNetworks/decision-tree-js.git"
