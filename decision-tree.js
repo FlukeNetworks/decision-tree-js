@@ -13,7 +13,7 @@ var dt = (function () {
             ignoredAttributes: arrayToHashSet(builder.ignoredAttributes),
             categoryAttr: builder.categoryAttr || 'category',
             minItemsCount: builder.minItemsCount || 1,
-            entropyThrehold: builder.entropyThrehold || 0.01,
+            entropyThreshold: builder.entropyThreshold || 0.01,
             maxTreeDepth: builder.maxTreeDepth || 70
         });
     }
@@ -189,7 +189,7 @@ var dt = (function () {
         var trainingSet = builder.trainingSet;
         var minItemsCount = builder.minItemsCount;
         var categoryAttr = builder.categoryAttr;
-        var entropyThrehold = builder.entropyThrehold;
+        var entropyThreshold = builder.entropyThreshold;
         var maxTreeDepth = builder.maxTreeDepth;
         var ignoredAttributes = builder.ignoredAttributes;
 
@@ -204,7 +204,7 @@ var dt = (function () {
 
         var initialEntropy = entropy(trainingSet, categoryAttr);
 
-        if (initialEntropy <= entropyThrehold) {
+        if (initialEntropy <= entropyThreshold) {
             // entropy of training set too small
             // (it means that training set is almost homogeneous),
             // so we have to terminate process of building tree
@@ -328,7 +328,8 @@ var dt = (function () {
             attr = tree.attribute;
             value = item[attr];
 
-            predicate = tree.predicate;
+            predicate = predicates[tree.predicateName]; // v2: ADDED
+//            predicate = tree.predicate; v2: COMMENTED OUT
             pivot = tree.pivot;
 
             // move to one of subtrees
@@ -390,6 +391,7 @@ var dt = (function () {
     var exports = {};
     exports.DecisionTree = DecisionTree;
     exports.RandomForest = RandomForest;
+    exports.predict = predict; // v2: ADDED
     return exports;
 })();
 
